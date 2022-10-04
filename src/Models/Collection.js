@@ -13,12 +13,25 @@ const CollectionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    image:{
-        type: Image,
-        required: false,
+    owner:{
+        type: String,
+        required: true,
     },
+    items:[
+        {
+            name:{
+                type: String,
+                required: true,
+            },
+            tags:{
+                type: Array,
+                required: true,
+            },
+        },
+    ]
 });
 
-const CollectionModel = mongoose.model('collectionlist', CollectionSchema);
+const myDB = mongoose.connection.useDb('collectionlist')
+const CollectionModel = myDB.model('collections', CollectionSchema);
 
 module.exports = CollectionModel;

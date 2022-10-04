@@ -8,9 +8,9 @@ const port = process.env.PORT || 5000;
 
 connectDB();
 
-app.get('/', (req,res) => {
-    res.send('Hello world!')
-})
+app.get('/', (req,res) => res.send('Hello world!'));
+app.use('/collections', require('./Routes/Api/Collections'));
+app.use('/users', require('./Routes/Api/Users'));
 
 app.listen(port, () =>{
     console.log(`App listening on port ${port}`)
