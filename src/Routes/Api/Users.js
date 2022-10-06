@@ -62,9 +62,9 @@ router.delete("/deleteuser", (req,res) => {
         }
         else {
             res.json("user was succesfully deleted")
-        }
-    })
-})
+        };
+    });
+});
 //add to Admins 
 router.patch("/addtoadmins", (req,res) =>{
     UserModel.findOneAndUpdate({_id : req.body.id}, {admin : "true"}, (err, result) =>{

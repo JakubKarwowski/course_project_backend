@@ -23,10 +23,9 @@ const CollectionSchema = new mongoose.Schema({
                 type: String,
                 required: true,
             },
-            tags:{
-                type: Array,
-                required: true,
-            },
+            tags:[
+                String,
+            ],
         },
     ]
 });
