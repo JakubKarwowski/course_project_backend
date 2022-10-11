@@ -6,11 +6,7 @@ const cors = require('cors');
 
 
 const app = express();
-app.use(cors({
-    allowedHeaders: "*",
-    allowedMethods: "*",
-    origin: "*",
-}));
+app.use(cors());
 const port = process.env.PORT || 5000;
 
 connectDB();
