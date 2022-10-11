@@ -14,7 +14,7 @@ router.post("/register", async (req,res) => {
     const takenName = await UserModel.findOne({name : user.name})
 
     if(takenUsername || takenName) {
-        res.json({message : "Username or email has already been registered"})
+        res.json({message : "Username has already been registered, please use different one."})
     } else {
         user.password = await bcrypt.hash(req.body.password, 10)
 
@@ -25,7 +25,7 @@ router.post("/register", async (req,res) => {
         })
 
         dbUser.save()
-        res.json({message: "Success"})
+        res.json({message: "New account has been successfully registered"})
     }
    
 });
@@ -68,7 +68,7 @@ router.post("/login", (req,res) => {
     })
 })
 
-router.get("/getUsername", verifyJWT, (req,res) => {
+router.get("/isuserauth", verifyJWT, (req,res) => {
     res.json({isLoggedIn: true, username: req.user.username})
 })
 
