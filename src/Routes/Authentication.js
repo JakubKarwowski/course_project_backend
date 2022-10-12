@@ -46,6 +46,8 @@ router.post("/login", (req,res) => {
                 const payload = {
                     id: dbUser._id,
                     username: dbUser.username,
+                    admin: dbUser.admin,
+                    blocked: dbUser.blocked,
                 }
                 jwt.sign(
                     payload,
@@ -69,7 +71,7 @@ router.post("/login", (req,res) => {
 })
 
 router.get("/isuserauth", verifyJWT, (req,res) => {
-    res.json({isLoggedIn: true, username: req.user.username})
+    res.json({isLoggedIn: true, username: req.user})
 })
 
 module.exports = router;
