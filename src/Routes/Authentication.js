@@ -57,7 +57,8 @@ router.post("/login", (req,res) => {
                         if(err) return res.json({message: err})
                         return res.json({
                             message: "Success",
-                            token: "Bearer "+ token
+                            token: "Bearer "+ token,
+                            id:payload.id
                         })
                     }
                 )
