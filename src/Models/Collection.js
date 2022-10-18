@@ -17,6 +17,10 @@ const CollectionSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    // dateOfCreation{
+    //     type: Date,
+    //     required: true,
+    // },
     items:[
         {
             name:{
@@ -26,6 +30,10 @@ const CollectionSchema = new mongoose.Schema({
             tags:[
                 String,
             ],
+            // date:{
+            //     type: Date,
+            //     required: true,
+            // }
         },
     ]
 });

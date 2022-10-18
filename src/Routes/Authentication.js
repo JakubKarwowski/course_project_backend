@@ -72,7 +72,7 @@ router.post("/login", (req,res) => {
 
 router.get("/isuserauth", verifyJWT, (req,res) => {
     const user = req.user;
-    res.json({isLoggedIn: true, username: user.username, admin: user.admin, blocked: user.blocked})
+    res.json({isLoggedIn: true, id:user._id, username: user.username, admin: user.admin, blocked: user.blocked})
 })
 
 module.exports = router;
