@@ -11,14 +11,10 @@ router.get("/getcollections" , (req,res) => {
 
 });
 //get one
-router.get("/getcollection", (req,res) => {
-    CollectionModel.findOne({_id:req.body.id}, function(err, result){
-        if(err){
-            console.log(err)
-        }else{
-            res.json(result)
-        }
-    })
+router.get("/getcollections/:id", (req,res) => {
+    CollectionModel.findById(req.params.id)
+    .then((result)=> res.json(result))
+    .catch((err)=> res.json(err))
 });
 //create
 router.post("/createcollection", (req,res) => {
