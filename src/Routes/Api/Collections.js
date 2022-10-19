@@ -16,8 +16,7 @@ router.get("/getcollection", (req,res) => {
         if(err){
             console.log(err)
         }else{
-            console.log(req)
-            res.json(result)
+            res.json(req.params)
         }
     })
 });
