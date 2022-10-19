@@ -12,7 +12,7 @@ router.get("/getcollections" , (req,res) => {
 });
 //get one
 router.get("/getcollection", (req,res) => {
-    CollectionModel.findById(req.body.id, function(err, result){
+    CollectionModel.findOne({_id:req.body.id}, function(err, result){
         if(err){
             console.log(err)
         }else{
