@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const CustomFieldsSchema = new mongoose.Schema({
-    name:[String],
-    type:[String],
-    value:[String],
+    name:{type:String},
+    type:{type:String},
+    value:{type:String}
 })
 
 const ItemsSchema = new mongoose.Schema({
