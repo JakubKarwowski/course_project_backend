@@ -42,7 +42,7 @@ router.delete('/deletecollection', (req,res) => {
 });
 //edit
 router.patch("/editcollection", (req,res) => {
-    CollectionModel.findByIdAndUpdate(req.body._id, req.body)
+    CollectionModel.findByIdAndUpdate(req.body.id, req.body)
     .then(res.json("collection was succesfully edited"))
     .catch(err => res.json(err))
 })
