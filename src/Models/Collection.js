@@ -19,7 +19,8 @@ const ItemsSchema = new mongoose.Schema({
         required: true,
 
     }]
-});
+},
+{ timestamps: true });
 
 const CollectionSchema = new mongoose.Schema({
     name:{
@@ -48,7 +49,9 @@ const CollectionSchema = new mongoose.Schema({
             required:true,
         },
     ],
-});
+    
+},
+{ timestamps: true });
 
 const myDB = mongoose.connection.useDb('collectionlist')
 const CollectionModel = myDB.model('collections', CollectionSchema);
