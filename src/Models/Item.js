@@ -20,6 +20,9 @@ const ItemsSchema = new mongoose.Schema({
     collectionName:{
         type:String,
     },
+    author:{
+        type:String,
+    },
     customFields:[{
         type: CustomFieldsSchema,
         required: true,

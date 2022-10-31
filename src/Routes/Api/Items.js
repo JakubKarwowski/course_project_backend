@@ -21,6 +21,7 @@ router.post("/createitem", (req,res) => {
         name : req.body.name,
         tags : req.body.tags,
         customFields : req.body.customFields,
+        author: req.body.author,
         collectionId : req.body.collectionId,
         collectionName: req.body.collectionName,
     })
