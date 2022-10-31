@@ -3,6 +3,12 @@ const router = express.Router();
 
 const ItemsModel = require("../../Models/Item")
 
+router.get("/searchitems" , (req,res) => {
+    ItemsModel.find({$text: {$search: req.body.searchtext}})
+    .then(items => res.json(items))
+    .catch(err => res.status(404).json('no items found'))
+})
+
 router.get("/getitems" , (req,res) => {
     ItemsModel.find()
     .then(items => res.json(items))

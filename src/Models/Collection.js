@@ -20,6 +20,8 @@ const CollectionSchema = new mongoose.Schema({
 },
 { timestamps: true });
 
+CollectionSchema.index({'$**' : 'text'});
+
 const myDB = mongoose.connection.useDb('collectionlist')
 const CollectionModel = myDB.model('collections', CollectionSchema);
 

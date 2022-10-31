@@ -31,6 +31,8 @@ const ItemsSchema = new mongoose.Schema({
 },
 { timestamps: true });
 
+ItemsSchema.index({'$**' : 'text'});
+
 const myDB = mongoose.connection.useDb('collectionlist')
 const ItemsModel = myDB.model('items', ItemsSchema);
 

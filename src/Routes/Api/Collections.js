@@ -3,6 +3,11 @@ const router = express.Router();
 
 const CollectionModel = require("../../Models/Collection");
 
+router.get("/searchcollections" , (req,res) => {
+    CollectionModel.find({$text: {$search: req.body.searchtext}})
+    .then(items => res.json(items))
+    .catch(err => res.status(404).json('no items found'))
+})
 //get all
 router.get("/getcollections" , (req,res) => {
     CollectionModel.find()
