@@ -3,8 +3,8 @@ const router = express.Router();
 
 const CollectionModel = require("../../Models/Collection");
 
-router.get("/searchcollections" , (req,res) => {
-    CollectionModel.find({$text: {$search: req.body.searchtext}})
+router.get("/searchcollections/:id" , (req,res) => {
+    CollectionModel.find({$text: {$search: req.params.id}})
     .then(items => res.json(items))
     .catch(err => res.status(404).json('no items found'))
 })

@@ -13,7 +13,6 @@ connectDB();
 
 app.use(bodyParser.json())
 
-app.get('/', (req,res) => res.send('Hello world!'));
 app.use('/collections', require('./Routes/Api/Collections'));
 app.use('/users', require('./Routes/Api/Users'));
 app.use('/authentication', require('./Routes/Authentication'))
